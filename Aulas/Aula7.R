@@ -1,5 +1,6 @@
 library(ggplot2)
 library(palmerpenguins)
+library(class)
 
 data(penguins)
 pinguins <- penguins
@@ -17,3 +18,6 @@ teste_padronizado <- scale(teste[,-1])
 
 classe_treino <- treino$species
 classe_teste <- teste$species
+
+modelo1 <- knn(train = treino_padronizado, test = teste_padronizado, cl = classe_treino, k=1)
+
