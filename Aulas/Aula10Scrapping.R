@@ -37,3 +37,22 @@ municipioMG <- read_municipality(code_muni = "MG")
 ggplot(data = municipioMG)+
   theme_minimal()+
   geom_sf()
+
+estados <- read_state()
+estados$name_state
+order(estados$name_state)
+estados[2,]
+
+alfabetizacao <- alfabetizacao[order(alfabetizacao$estado),]
+alfabetizacao$estado
+
+
+
+estados <- estados[order(estados$name_state),]
+estados$taxa <- alfabetizacao$taxa
+
+ggplot(data = estados, aes(fill = taxa)) +
+  geom_sf()+
+  scale_fill_gradient(low = "#56B1F7", high = "#132B43")
+
+
