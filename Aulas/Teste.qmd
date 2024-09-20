@@ -1,0 +1,35 @@
+---
+title: "Teste"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: inline
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#| echo: false
+library(ggplot2)
+teste <- iris[-(1:100),]
+ggplot(teste, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point()
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+library(ggplot2)
+treino <- iris[1:100,]
+ggplot(treino, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point()
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
