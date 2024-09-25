@@ -17,3 +17,8 @@ noticia <- html |>
 noticia <- paste(noticia, collapse = " ")
 
 artigos <- data.frame(titulo, noticia)
+
+artigos |>
+  unnest_tokens(output = words, input = noticia)|>
+  count(words) |>
+  arrange(desc(n))
