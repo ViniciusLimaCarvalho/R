@@ -1,0 +1,12 @@
+---
+title: "Apresentação GRVA"
+format: html
+editor: visual
+---
+
+## Modelo de Árvore de Decisão
+
+```{r}
+baseDados <- read.table(file = "churn.txt", header = TRUE, sep = ";")
+```
+
